@@ -70,8 +70,9 @@
 
     <div style="margin-top:100px;">
         <button type="button" class="opt btn btn-light" data-bs-toggle="modal" data-bs-target="#upload">Upload Photo</button>
-        <button type="button" class="opt btn btn-light" data-bs-toggle="modal" data-bs-target="#remove">Remove Employee</button>
-        <button type="button" class="opt btn btn-light" data-bs-toggle="modal" data-bs-target="#new">Add Employee</button>
+        <form method="post" enctype="multipart/form-data" action="">
+            <button type="submit" class="opt btn btn-light">Take Attendance</button>
+        </form>
     </div>
 
     <div class="modal fade" id="upload" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -87,59 +88,15 @@
                       <label for="uploadphoto" class="form-label">Upload a photo</label>
                       <input type="file" class="form-control" id="inputimage" name="photo" onchange="showpic(event)" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>              
                 <div style="padding: 10px;text-align: center;">
                     <img id="output" width="80%">
                 </div>
             </div>
           </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="remove" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Remove an Employee</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="" enctype="multipart/form-data">
-                    <div class="mb-3">
-                      <label for="rID" class="form-label">Enter ID</label>
-                      <input type="text" class="form-control" id="rID" name="rID" required>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="margin: 0 auto;">Submit</button>
-                </form>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="new" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Register an Employee</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" style="text-align: center;">
-                <form enctype="multipart/form-data" id="info" method="post" action="">
-                    <div class="mb-3" style="text-align: left;">
-                        <label for="nID" class="form-label">Enter ID</label>
-                        <input type="text" class="form-control" id="nID" name="nID"style="margin-bottom:10px;" required>
-                        <button type="submit" id="hid" class="btn btn-primary" style="display: none;">Submit</button>
-                    </div>
-                    <button button type="button" class="btn btn-primary" id="start-camera">Start Camera</button>
-                    <button button type="button" class="btn btn-primary" id="start-record">Start Recording</button>
-                    <video  style="margin-top:10px;" id="video" width="400" height="240" autoplay></video>
-                    <input type="file" id="videoup" name="video" style="display: none;">
-                </form>            
-            </div>
-          </div>
-        </div>
-    </div>
+    </div> 
 
     <script>
         var showpic = function (event){
